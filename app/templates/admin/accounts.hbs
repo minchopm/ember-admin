@@ -1,0 +1,50 @@
+<h1>Admin - Accounts</h1>
+
+<!--<div class="well well-sm">
+  {{#bs-form formLayout="inline" action="addNewProduct" model=newProduct}}
+    {{bs-form-element label="Product name:" placeholder="Product name" value=newProduct.name}}
+    {{bs-form-element label="SKU:" placeholder="SKU" value=newProduct.sku}}
+    {{bs-form-element label="Unit price:" placeholder="Unit price" value=newProduct.unitPrice}}
+    {{bs-button defaultText="Add" type="primary" buttonType="submit"}}
+  {{/bs-form}}
+</div>-->
+
+
+<table class="table table-striped">
+  <caption>List of accounts</caption>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Reseller</th>
+      <th>Status</th>
+      <th>Email</th>
+      <th>Telephone</th>
+      <th>FaxNumber</th>
+      <th>CreationDate</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |account|}}
+        <tr>
+          <td>{{account.id}}</td>
+          <td>{{account.name}}</td>
+          <td>{{account.status}}</td>
+          <td>{{account.email}}</td>
+          <td>{{account.telephone}}</td>
+          <td>{{account.faxNumber}}</td>
+          <td>{{account.creationDate}}</td>
+          <td {{action 'editAccount' account}}></td>
+          <!--<td>
+            {{#if product.isEditing}}
+              <button class="btn btn-xs btn-success" {{action 'updateProduct' product}}>Save</button>
+              <button class="btn btn-xs btn-info" {{action 'cancelEditing' product}}>Cancel</button>
+            {{else}}
+              <button class="btn btn-xs btn-danger" {{action 'deleteProduct' product}}>Del</button>
+              <button class="btn btn-xs btn-default" {{action 'editProduct' product}}>Edit</button>
+            {{/if}}
+          </td>-->
+        </tr>
+    {{/each}}
+  </tbody>
+</table>
